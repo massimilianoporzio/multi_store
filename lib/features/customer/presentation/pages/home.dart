@@ -33,17 +33,22 @@ class HomeScreen extends StatelessWidget {
             },
           ),
           title: const CupertinoSearchTextField(),
-          bottom: TabBar(isScrollable: true, tabs: [
-            CategoryTab(categoryName: 'men'),
-            CategoryTab(categoryName: 'women'),
-            CategoryTab(categoryName: 'shoes'),
-            CategoryTab(categoryName: 'bags'),
-            CategoryTab(categoryName: 'electronics'),
-            CategoryTab(categoryName: 'accessories'),
-            CategoryTab(categoryName: 'home & garden'),
-            CategoryTab(categoryName: 'kids'),
-            CategoryTab(categoryName: 'beauty'),
-          ]),
+          bottom: TabBar(
+            isScrollable: true,
+            indicatorColor: Colors.yellow,
+            indicatorWeight: 8,
+            tabs: [
+              CategoryTab(categoryName: 'men'),
+              CategoryTab(categoryName: 'women'),
+              CategoryTab(categoryName: 'shoes'),
+              CategoryTab(categoryName: 'bags'),
+              CategoryTab(categoryName: 'electronics'),
+              CategoryTab(categoryName: 'accessories'),
+              CategoryTab(categoryName: 'home & garden'),
+              CategoryTab(categoryName: 'kids'),
+              CategoryTab(categoryName: 'beauty'),
+            ],
+          ),
         ),
         body: const TabBarView(children: [
           Center(
@@ -65,7 +70,7 @@ class HomeScreen extends StatelessWidget {
             child: Text('accessories screen'),
           ),
           Center(
-            child: Text('home % garden screen'),
+            child: Text('home & garden screen'),
           ),
           Center(
             child: Text('kids screen'),

@@ -10,10 +10,13 @@ class CategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tab(
-      child: Text(
-        categoryName.tr(context).sentenceCase,
-        style: TextStyle(color: Colors.grey.shade600),
+    return SizedBox(
+      // width: 100,
+      child: Tab(
+        child: Text(
+          categoryName.tr(context).sentenceCase,
+          style: TextStyle(color: Colors.grey.shade600),
+        ),
       ),
     );
   }

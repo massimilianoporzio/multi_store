@@ -57,13 +57,13 @@ List<String> shoes = [
   'men boots',
   'men canvas',
   'men sport',
-  'men snadals',
+  'men sandals',
   'home slippers',
   'women slippers',
   'women boots',
   'women heels',
   'women sport',
-  'women snadals',
+  'women sandals',
   'other'
 ];
 

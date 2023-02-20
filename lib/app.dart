@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:multi_store/core/themes/app_theme.dart';
 import 'package:multi_store/features/customer/presentation/cubits/navigation/navigation_cubit.dart';
 import 'package:multi_store/features/customer/presentation/pages/cutomer_home_page.dart';
 import 'package:multi_store/features/locale/presentation/cubit/locale_cubit.dart';
@@ -53,9 +54,7 @@ class MyApp extends StatelessWidget {
             },
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
+            theme: appTheme(),
             initialRoute: CustomerHomePage.routeName,
             routes: {
               CustomerHomePage.routeName: (context) => const CustomerHomePage(),

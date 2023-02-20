@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:multi_store/features/customer/presentation/cubits/navigation/navigation_cubit.dart';
 
-class CustomerBottomBar extends StatelessWidget {
+class CustomerBottomBar extends StatefulWidget {
   const CustomerBottomBar({super.key});
 
   @override
+  State<CustomerBottomBar> createState() => _CustomerBottomBarState();
+}
+
+class _CustomerBottomBarState extends State<CustomerBottomBar> {
+  @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      elevation: 0,
       selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.red,
-      currentIndex: 1,
+      selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
+      type: BottomNavigationBarType.fixed,
+      currentIndex: context.watch<CustomerNavigationCubit>().state.currentIndex,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Category'),
@@ -16,6 +25,9 @@ class CustomerBottomBar extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
       ],
+      onTap: (index) {
+        context.read<CustomerNavigationCubit>().setCurrentIndex(index);
+      },
     );
   }
 }

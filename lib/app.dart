@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
             create: (context) => sl<CustomerNavigationCubit>())
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,

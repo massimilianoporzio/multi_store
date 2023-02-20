@@ -4,7 +4,7 @@ List<String> maincateg = [
   'electronics',
   'accessories',
   'shoes',
-  'home & garden',
+  'homegarden',
   'beauty',
   'kids',
   'bags'

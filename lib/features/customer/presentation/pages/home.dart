@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multi_store/core/localization/app_localization.dart';
+import 'package:multi_store/features/customer/presentation/widgets/category_tab.dart';
 import 'package:multi_store/features/locale/presentation/cubit/locale_cubit.dart';
 import 'package:recase/recase.dart';
 
@@ -11,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 9,
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
@@ -32,25 +33,16 @@ class HomeScreen extends StatelessWidget {
             },
           ),
           title: const CupertinoSearchTextField(),
-          bottom: TabBar(tabs: [
-            Tab(
-              child: Text(
-                'men'.tr(context).sentenceCase,
-                style: TextStyle(color: Colors.grey.shade600),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'women'.tr(context).sentenceCase,
-                style: TextStyle(color: Colors.grey.shade600),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'shoes'.tr(context).sentenceCase,
-                style: TextStyle(color: Colors.grey.shade600),
-              ),
-            )
+          bottom: TabBar(isScrollable: true, tabs: [
+            CategoryTab(categoryName: 'men'),
+            CategoryTab(categoryName: 'women'),
+            CategoryTab(categoryName: 'shoes'),
+            CategoryTab(categoryName: 'bags'),
+            CategoryTab(categoryName: 'electronics'),
+            CategoryTab(categoryName: 'accessories'),
+            CategoryTab(categoryName: 'home & garden'),
+            CategoryTab(categoryName: 'kids'),
+            CategoryTab(categoryName: 'beauty'),
           ]),
         ),
         body: const TabBarView(children: [
@@ -62,6 +54,24 @@ class HomeScreen extends StatelessWidget {
           ),
           Center(
             child: Text('shoes screen'),
+          ),
+          Center(
+            child: Text('bags screen'),
+          ),
+          Center(
+            child: Text('electronics screen'),
+          ),
+          Center(
+            child: Text('accessories screen'),
+          ),
+          Center(
+            child: Text('home % garden screen'),
+          ),
+          Center(
+            child: Text('kids screen'),
+          ),
+          Center(
+            child: Text('beauty screen'),
           ),
         ]),
       ),

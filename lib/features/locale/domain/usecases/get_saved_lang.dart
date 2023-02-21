@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
 
+import '../../../../core/domain/usecases/base_usecase.dart';
 import '../../../../core/errors/failures.dart';
-import '../../../../core/presentation/usecases/base_usecase.dart';
+
 import '../repositories/lang_repository.dart';
 
 class GetSavedLangUseCase implements BaseUseCase<String, NoParams> {

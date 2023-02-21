@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:multi_store/core/routes/routes.dart';
-import 'package:multi_store/features/customer/presentation/cubits/navigation/navigation_cubit.dart';
-import 'package:multi_store/features/customer/presentation/pages/home.dart';
-import 'package:multi_store/features/customer/presentation/widgets/customer_bottombar.dart';
+
+import '../../../../core/routes/routes.dart';
+
+import '../../../categories/presentation/pages/category_screen.dart';
+import '../cubits/navigation/navigation_cubit.dart';
+import '../widgets/customer_bottombar.dart';
+import 'home.dart';
 
 class CustomerHomePage extends StatelessWidget {
   static const routeName = AppRoutes.customerHome;
@@ -11,9 +14,7 @@ class CustomerHomePage extends StatelessWidget {
 
   final List<Widget> _tabs = const [
     HomeScreen(),
-    Center(
-      child: Text('categoty screen'),
-    ),
+    CategoryScreen(),
     Center(
       child: Text('stores screen'),
     ),

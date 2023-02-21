@@ -100,7 +100,13 @@
   "laptop bags":"laptop bags",
   "women bags":"women bags",
 
-  "cacheErrorKey":"Error in retrieving cached data."
+  "cacheErrorKey":"Error in retrieving cached data.",
+
+  "hintText":"What are you looking for?",
+  "search":"Search",
+
+  "genericError":"Oops! Something gonw wrong. Please, retry.",
+  "localError":"Error in retrieving data."
   
   
   

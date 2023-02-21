@@ -1,10 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:multi_store/core/localization/app_localization.dart';
-import 'package:multi_store/features/customer/presentation/widgets/category_tab.dart';
-import 'package:multi_store/features/locale/presentation/cubit/locale_cubit.dart';
-import 'package:recase/recase.dart';
+
+import '../../../../core/localization/app_localization.dart';
+
+import '../../../locale/presentation/cubit/locale_cubit.dart';
+
+import '../../../search/presentation/widgets/fake_search_app_bar.dart';
+import '../widgets/category_tab.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               }
             },
           ),
-          title: const CupertinoSearchTextField(),
+          title: const FakeSearchAppBar(),
           bottom: TabBar(
             isScrollable: true,
             indicatorColor: Colors.yellow,

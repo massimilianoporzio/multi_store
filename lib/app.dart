@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:multi_store/core/themes/app_theme.dart';
-import 'package:multi_store/features/customer/presentation/cubits/navigation/navigation_cubit.dart';
-import 'package:multi_store/features/customer/presentation/pages/cutomer_home_page.dart';
-import 'package:multi_store/features/locale/presentation/cubit/locale_cubit.dart';
+import 'package:multi_store/features/categories/presentation/cubit/categories_cubit.dart';
 
 import 'core/localization/app_localization.dart';
 import 'core/services/service_locator.dart';
+import 'core/themes/app_theme.dart';
+import 'features/home/presentation/cubits/navigation/navigation_cubit.dart';
+import 'features/home/presentation/pages/cutomer_home_page.dart';
+import 'features/locale/presentation/cubit/locale_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<LocaleCubit>(
           create: (context) => sl<LocaleCubit>()..getSavedLang(),
-        )
+        ),
+        BlocProvider<CategoriesCubit>(
+          create: (context) => sl<CategoriesCubit>(),
+        ),
       ],
       child: BlocBuilder<LocaleCubit, LocaleState>(
         buildWhen: (previous, current) =>

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:multi_store/features/customer/presentation/cubits/navigation/navigation_cubit.dart';
+
+import '../cubits/navigation/navigation_cubit.dart';
 
 class CustomerBottomBar extends StatelessWidget {
   const CustomerBottomBar({super.key});

@@ -101,7 +101,13 @@
   "laptop bags":"borse per laptop",
   "women bags":"borse da donna",
 
-  "cacheErrorKey":"Errore nel recupero dati dalla cache."
+  "cacheErrorKey":"Errore nel recupero dati dalla cache.",
+
+  "hintText":"Che cosa stai cercando?",
+  "search":"Cerca",
+
+  "genericError":"Ops! Qualcosa è andato storto. Riprova.",
+  "localError":"Errore nel recupero dei dati."
 
 
 

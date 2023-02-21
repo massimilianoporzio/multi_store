@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:multi_store/core/utils/string_constants.dart';
 
-import '../../../../core/presentation/usecases/base_usecase.dart';
+import '../../../../core/domain/usecases/base_usecase.dart';
 import '../../domain/usecases/change_locale.dart';
 import '../../domain/usecases/get_saved_lang.dart';
 

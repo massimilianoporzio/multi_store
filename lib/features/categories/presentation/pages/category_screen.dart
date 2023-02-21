@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:multi_store/core/localization/app_localization.dart';
 import '../cubit/categories_cubit.dart';
 
 import '../../../search/presentation/widgets/fake_search_app_bar.dart';
@@ -14,7 +15,8 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
+  late List<Category> items;
 
   @override
   void dispose() {
@@ -30,42 +32,37 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesCubit, CategoriesState>(
-      buildWhen: (previous, current) => previous != current,
-      builder: (context, state) {
-        return Scaffold(
-            backgroundColor: Colors.white,
-            appBar: AppBar(
-              backgroundColor: Colors.white,
-              elevation: 0,
-              title: const FakeSearchAppBar(),
-            ),
-            body: Stack(
-              children: [
-                Positioned(
-                    bottom: 0,
-                    left: 0,
-                    child: sideNavigator(
-                        items: state.mainCategories,
-                        size: MediaQuery.of(context).size,
-                        selectedIndex: state.mainCategories
-                            .indexWhere((element) => element.isSelected))),
-                Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: categoriesView(
-                      size: MediaQuery.of(context).size,
-                    )),
-              ],
-            ));
-      },
-    );
+    items = context.watch<CategoriesCubit>().state.mainCategories;
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          scrolledUnderElevation: 0.0,
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          title: const FakeSearchAppBar(),
+          // title: const Text('prova'),
+        ),
+        body: Stack(
+          children: [
+            Positioned(
+                bottom: 0,
+                left: 0,
+                child: sideNavigator(
+                  size: MediaQuery.of(context).size,
+                )),
+            Positioned(
+                bottom: 0,
+                right: 0,
+                child: categoriesView(
+                  size: MediaQuery.of(context).size,
+                )),
+          ],
+        ));
   }
 
-  Widget sideNavigator(
-      {required Size size,
-      required List<Category> items,
-      required int selectedIndex}) {
+  Widget sideNavigator({
+    required Size size,
+  }) {
     return SizedBox(
       height: size.height * 0.8,
       width: size.width * 0.2,
@@ -73,8 +70,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
         itemCount: items.length,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
-            context.read<CategoriesCubit>().getMainCategories(index);
-            _pageController.jumpToPage(selectedIndex);
+            _pageController.animateToPage(index,
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.decelerate);
           },
           child: Container(
             color:
@@ -82,7 +80,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             height: 100,
             child: Center(
                 child: Text(
-              items[index].label,
+              items[index].label.tr(context),
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 12),
             )),
@@ -101,6 +99,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
         controller: _pageController,
         onPageChanged: (index) {
           context.read<CategoriesCubit>().getMainCategories(index);
+          // for (var element in items) {
+          //   element.isSelected = false;
+          // }
+          // setState(() {
+          //   items[index].isSelected = true;
+          // });
         },
         scrollDirection: Axis.vertical,
         children: const [

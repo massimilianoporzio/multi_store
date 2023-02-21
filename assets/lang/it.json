@@ -107,7 +107,9 @@
   "search":"Cerca",
 
   "genericError":"Ops! Qualcosa è andato storto. Riprova.",
-  "localError":"Errore nel recupero dei dati."
+  "localError":"Errore nel recupero dei dati.",
+  "categories":"categorie",
+  "profile":"Profilo"
 
 
 

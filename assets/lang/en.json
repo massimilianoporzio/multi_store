@@ -106,7 +106,9 @@
   "search":"Search",
 
   "genericError":"Oops! Something gonw wrong. Please, retry.",
-  "localError":"Error in retrieving data."
+  "localError":"Error in retrieving data.",
+  "categories":"categories",
+  "profile":"Profile"
   
   
   

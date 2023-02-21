@@ -8,4 +8,6 @@ class AppStrings {
   static const String search = 'search';
   static const String genericError = 'genericError';
   static const String localError = 'localError';
+  static const String categories = 'categories';
+  static const String profile = 'profile';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multi_store/core/localization/app_localization.dart';
+import 'package:multi_store/features/categories/presentation/widgets/men_category.dart';
 import '../cubit/categories_cubit.dart';
 
 import '../../../search/presentation/widgets/fake_search_app_bar.dart';
@@ -108,7 +109,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         },
         scrollDirection: Axis.vertical,
         children: const [
-          Center(child: Text('men ctegory')),
+          MenCategoryScreen(),
           Center(child: Text('women ctegory')),
           Center(child: Text('electronics ctegory')),
           Center(child: Text('accesories ctegory')),

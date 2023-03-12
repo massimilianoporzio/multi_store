@@ -29,4 +29,15 @@ class CategoriesCubit extends Cubit<CategoriesState> {
           status: CategoriesStatus.loaded)),
     );
   }
+
+  void selectCategory(String id) {
+    final newMainCategories = state.mainCategories.map((Category todo) {
+      if (todo.id == id) {
+        return todo.copyWith(isSelected: true);
+      } else {
+        return todo.copyWith(isSelected: false);
+      }
+    }).toList();
+    emit(state.copyWith(mainCategories: newMainCategories));
+  }
 }

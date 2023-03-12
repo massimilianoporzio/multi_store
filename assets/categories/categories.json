@@ -1,0 +1,112 @@
+{
+    "mainCategories": [
+        {
+            "id":"1",
+            "label":"men",
+            "subcategories": [
+                {
+                    "id":"1",
+                    "maincateg_id":"1",
+                    "label":"shirt",
+                    "products":[
+                        {
+                            "id":"1",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men0.jpg"
+                        },
+                        {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men1.jpg"
+                        }, {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men2.jpg"
+                        },
+                        {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men3.jpg"
+                        },
+                        {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men4.jpg"
+                        },
+                        {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men5.jpg"
+                        },
+                        {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men6.jpg"
+                        },
+                        {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men7.jpg"
+                        },
+                        {
+                            "id":"2",
+                            "subcategory_id":"1",
+                            "description":"desc",
+                            "price": 2.0,
+                            "imagePath":"assets/images/men/men8.jpg"
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "id":"2",
+            "label":"women"
+        },
+        {
+            "id":"3",
+            "label":"electronics"
+        },
+        {
+            "id":"4",
+            "label":"accessories"
+        },
+        {
+            "id":"5",
+            "label":"shoes"
+        },
+        {
+            "id":"6",
+            "label":"home & garden"
+        },
+        {
+            "id":"7",
+            "label":"beauty"
+        },
+        {
+            "id":"8",
+            "label":"kids"
+        },
+        {
+            "id":"9",
+            "label":"bags"
+        }
+    ]
+}

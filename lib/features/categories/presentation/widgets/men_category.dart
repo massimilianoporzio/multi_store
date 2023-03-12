@@ -33,13 +33,18 @@ class MenCategoryScreen extends StatelessWidget {
             crossAxisCount: 3,
             children: List.generate(
                 4,
-                (index) => SizedBox(
-                      width: 70,
-                      height: 70,
-                      child: Image.asset('assets/images/try/image$index.jpg'),
+                (index) => Column(
+                      children: [
+                        SizedBox(
+                          width: 70,
+                          height: 70,
+                          child: Image.asset('assets/images/men/men$index.jpg'),
+                        ),
+                        const Text('shirt'),
+                      ],
                     )),
           ),
-        )
+        ),
       ],
     );
   }

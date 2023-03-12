@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:multi_store/core/errors/exceptions.dart';
 import 'package:multi_store/features/categories/data/models/category_model.dart';
 
-import '../../../../core/utils/categ_list.dart';
 import '../../domain/entities/category_entity.dart';
 
 abstract class LocalCategoriesDatasource {

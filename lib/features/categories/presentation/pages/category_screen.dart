@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multi_store/core/localization/app_localization.dart';
-import '../cubit/categories_cubit.dart';
-
 import '../../../search/presentation/widgets/fake_search_app_bar.dart';
+import '../cubit/categories_cubit.dart';
 
 import '../../domain/entities/category_entity.dart';
 
